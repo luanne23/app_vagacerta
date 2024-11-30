@@ -44,7 +44,7 @@ yarn
 ```sh
 npx expo start
 ``` 
-## Estrutura de Pastas e arquivos
+## Estrutura de Pastas e arquivos **src/**
 
 ```plaintext 
 ├── components                                # Componentes reutilizáveis da aplicação
@@ -96,7 +96,7 @@ npx expo start
 └── babel.config.js                           # Configuração do Babel para transpilar o código
 ``` 
 ## Lista de tarefas
- - [x] Conectar com a API de vagas feita com base no conteúdo que o professor Jeferson passou. Arquivos: `/services/api.tsx`,  `/repositories/UsuarioRepository.ts`, `/repositories/VagaRepository.ts` 
+ - [x] Conectar com a API de vagas feita com base no conteúdo que o professor Jeferson passou. Principais Arquivos: `/services/api.tsx`,  `/repositories/UsuarioRepository.ts`, `/repositories/VagaRepository.ts`, `/screens/login/index.tsx`, `/screens/List/index.tsx` 
  - [x] Permitir o acesso somente após realizar o login. Arquivo: `/screens/login/index.tsx`
  - [x] Criar um contexto para o usuário autenticado. Arquivo: `/contexto/UsuarioContexto.tsx`
  - [x] Manter localmente os dados do usuário autenticado. **É persistido o contexto do usuario**. Arquivo: `/contexto/UsuarioContexto.tsx`
