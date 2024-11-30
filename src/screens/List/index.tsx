@@ -6,6 +6,7 @@ import BGTop from '../../assets/BGTop.png';
 import Logo from '../../components/Logo';
 import VagaCard from '../../components/VagaCard';
 import vagaRepository from '../../repositories/VagaRepository';
+import { formatDate } from '../../utils/DateUtils';
 
 export default function List() {
 
@@ -15,7 +16,6 @@ export default function List() {
     const fetchVagas = async () => {
       try {
         const response = await vagaRepository.findAll()
-        console.log(response)
         setVagas(response);
       } catch (error) {
         console.error(error);
@@ -47,7 +47,7 @@ export default function List() {
                 <VagaCard
                   id={item.id}
                   title={item.titulo}
-                  dataCreated={item.dataCadastro}
+                  dataCreated={formatDate(item.dataCadastro)}
                   company={item.empresa}
                 />
               }

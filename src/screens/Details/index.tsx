@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Linking} from 'react-native';
 import { Feather } from '@expo/vector-icons';
+
 import { 
     Wrapper,
     Container, 
@@ -20,6 +21,8 @@ import {VagaProps} from '../../utils/Types';
 import Logo from '../../components/Logo';
 import theme from '../../theme';
 import { Button } from '../../components/Button';
+import vagaRepository from '../../repositories/VagaRepository';
+import { formatDate } from '../../utils/DateUtils';
 
 
 export default function Details({route, navigation }) {
@@ -29,15 +32,16 @@ export default function Details({route, navigation }) {
 
     const fetchVagas = async () => {
         try {
-          const response = await api.get(`/vagas/${id}`);
-          const data = response.data;
+          const response = await vagaRepository.findById(id);
+          const data = response;
           setVaga({
             id: data.id,
             title: data.titulo,
             description: data.descricao,
-            date: data.dataCadastro,
+            date: formatDate(data.dataCadastro),
             phone: data.telefone,
             company: data.empresa,
+            ativo: data.ativo
           });
 
         } catch (error) {
@@ -83,13 +87,13 @@ export default function Details({route, navigation }) {
                         <Title>{vaga.title}</Title>
                         <Description>{vaga.description}</Description>
                     </ContentContainer>
-
+                    {vaga.ativo?(
                     <Button 
                         title="Entrar em contato" 
                         noSpacing={true} 
                         variant='primary'
                         onPress={()=>sendWhatsapp(vaga.title,vaga.phone)}
-                    />
+                    />):<Container></Container>}
                 </Container>
             ) :(
                 <TitleError>Vaga não encontrada!</TitleError>

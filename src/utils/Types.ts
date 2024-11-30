@@ -5,6 +5,7 @@ export type VagaProps = {
     date: String;
     phone: String;
     company: String;
+    ativo : boolean
 };
 
 export type RootStackParamList = {
