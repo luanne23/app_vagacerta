@@ -2,9 +2,24 @@
 
 Este projeto é uma aplicação desenvolvida com **React Native** e **Expo**, projetada para o gerenciamento de usuários e vagas.
 
-## Estrutura do Projeto
+## Inicializando o servidor
+Para testar o app é necessario a api para a consulta de dados rodando.  
+# 1. Executar a api de dados 
+1. Clone o repositório: ```sh git clone https://github.com/luanne23/api_vagacerta.git ```
+2. Entre na pasta do projeto: ```sh cd ./api_vagacerta ```
+3. Instale as dependências: ```sh npm install ``` 
+4. Inicie o servidor: ```sh npm start ``` 
+# 2. Executar o APP
+1. Clone o repositório: ```sh git clone https://github.com/luanne23/app_vagacerta.git ```
+2. Configuração da API Adicione o IP no arquivo `/services/api.ts`: ```javascript import axios from 'axios'; const api = axios.create({ baseURL: 'http://192.168.1.8:3000/api' }); export default api;``` 
+3. Entre na pasta do projeto: ```sh cd ./app_vagacerta ```
+4. Instale as dependências: ```sh yarn ``` 
+5. Inicie o servidor: ```sh npx expo start ``` 
 
-## Estrutura de Pastas
+
+## C
+
+## Estrutura de Pastas e aruivos
 
 ```plaintext
 ├── screens                                   # Telas da aplicação
