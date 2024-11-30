@@ -23,6 +23,7 @@ import theme from '../../theme';
 import { Button } from '../../components/Button';
 import vagaRepository from '../../repositories/VagaRepository';
 import { formatDate } from '../../utils/DateUtils';
+import StatusBall from '../../components/status';
 
 
 export default function Details({route, navigation }) {
@@ -85,6 +86,7 @@ export default function Details({route, navigation }) {
                 <Container>
                     <ContentContainer>
                         <Title>{vaga.title}</Title>
+                        <StatusBall active={vaga.ativo}/>
                         <Description>{vaga.description}</Description>
                     </ContentContainer>
                     {vaga.ativo?(

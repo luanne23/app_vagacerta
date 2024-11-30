@@ -49,6 +49,7 @@ export default function List() {
                   title={item.titulo}
                   dataCreated={formatDate(item.dataCadastro)}
                   company={item.empresa}
+                  ativo={item.ativo}
                 />
               }
               showsVerticalScrollIndicator={true}

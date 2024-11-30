@@ -6,7 +6,7 @@ export const Container = styled.TouchableOpacity`
   align-items: left;
   gap: 4px;
   width: 100%;
-  height: 100px;
+  height: 130px;
   border-radius: 16px;
   justify-content: space-between;
   flex-direction: row;
@@ -52,3 +52,4 @@ export const OpenButton = styled.View`
     justify-content: center;
     height: 100%;
 `;
+
