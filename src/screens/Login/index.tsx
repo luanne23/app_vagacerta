@@ -1,7 +1,7 @@
 import { Image } from 'react-native';
 import {useState} from 'react'
 import { Wrapper,Container, Form, TextContainer, TextBlack, TextLink, TextLinkContainer } from './styles';
-import api from '../../services/api';
+import api from '../../repositories/UsuarioRepository';
 
 import BGTop from '../../assets/BGTop.png';
 import Logo from '../../components/Logo';
@@ -18,12 +18,8 @@ export default function Login({ navigation }) {
 
     const handleLogin = async () => {
         try {
-          const response = await api.get('/usuarios');
-          const users = response.data;
-          console.log(users);
-    
-          const user = users.find(u => u.email === email && u.senha === senha);
-    
+          const user = await api.login(email, senha);
+          
           if (user) {
             console.log('Login successful', `Welcome, ${user.nome}!`);
             navigation.navigate('Auth', { screen: 'Home' });
