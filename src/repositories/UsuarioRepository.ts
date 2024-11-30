@@ -14,12 +14,14 @@ const userRepository = {
 
  
   findById(id: number) {
-    return api.get(`/usuarios/${id}`)  
-      .then(response => response.data['user'])
+    const response =  api.get(`/usuarios/${id}`)  
+      .then(response => response.data)
       .catch(error => {
         console.error(`Erro ao buscar usuário com ID ${id}`, error);
         return null;
       });
+      console.log(response);
+      return response;
   },
 
   login(email: String, senha : String) {

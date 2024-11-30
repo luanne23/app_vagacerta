@@ -1,5 +1,5 @@
 import { Image } from 'react-native';
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import { Wrapper,Container, Form, TextContainer, TextBlack, TextLink, TextLinkContainer } from './styles';
 import api from '../../repositories/UsuarioRepository';
 
@@ -7,6 +7,7 @@ import BGTop from '../../assets/BGTop.png';
 import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import { Button } from '../../components/Button';
+import { UsuarioContext } from '../../contexto/UsuarioContexto';
 
 
 export default function Login({ navigation }) {
@@ -14,6 +15,7 @@ export default function Login({ navigation }) {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const {logar} = useContext(UsuarioContext); 
 
 
     const handleLogin = async () => {
@@ -22,9 +24,9 @@ export default function Login({ navigation }) {
           
           if (user) {
             console.log('Login successful', `Welcome, ${user.nome}!`);
+            user.senha = senha;
+            await logar(user);
             navigation.navigate('Auth', { screen: 'Home' });
-            // Navegue para a próxima tela ou faça outras ações necessárias
-            // navigation.navigate('NextScreen');
           } else {
             console.log('Login failed', 'Email or password is incorrect');
           }

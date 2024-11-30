@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Image, FlatList, View, Text } from 'react-native';
 import { Wrapper, Container, ListContainer, TextVagas } from './styles';
 
@@ -7,8 +7,9 @@ import Logo from '../../components/Logo';
 import VagaCard from '../../components/VagaCard';
 import vagaRepository from '../../repositories/VagaRepository';
 import { formatDate } from '../../utils/DateUtils';
+import { UsuarioContext } from '../../contexto/UsuarioContexto';
 
-export default function List() {
+export default function List({ navigation }: any) {
 
   const [vagas, setVagas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,11 @@ export default function List() {
     fetchVagas();
   }, []);
 
-
+  const { usuario, logar, logof } = useContext(UsuarioContext)
+  if(usuario == null){
+      navigation.navigate('Login');
+      return <View></View>;
+  }
 
 
   return (
