@@ -1,9 +1,9 @@
-# Aplicação de Gerenciamento de Vagas
+## Aplicação de Gerenciamento de Vagas
 
 Este projeto é uma aplicação desenvolvida com **React Native** e **Expo**, projetada para o gerenciamento de usuários e vagas.
 
-## Inicializando o servidor
-Para testar o app é necessario a api para a consulta de dados rodando.  
+## Testando o aplicativo
+Para testar o app é necessario a api para a consulta de dados. Neste é necessario primeiro rodar a api para depois rodar o app de vagas.   
 # 1. Executar a api de dados 
 1. Clone o repositório: 
 ```sh 
@@ -44,7 +44,7 @@ yarn
 ```sh
 npx expo start
 ``` 
-## Estrutura de Pastas e aruivos
+## Estrutura de Pastas e arquivos
 
 ```plaintext
 ├── screens                                   # Telas da aplicação
