@@ -4,7 +4,9 @@ Este projeto é uma aplicação desenvolvida com **React Native** e **Expo**, pr
 
 ## Estrutura do Projeto
 
-.
+## Estrutura de Pastas
+
+```plaintext
 ├── screens                                   # Telas da aplicação
 │   ├── Details                               # Tela de detalhes
 │   │   ├── index.tsx                         # Exibe detalhes de usuários ou vagas
@@ -31,4 +33,3 @@ Este projeto é uma aplicação desenvolvida com **React Native** e **Expo**, pr
 ├── App.tsx                                   # Arquivo principal que inicializa o aplicativo
 ├── app.json                                  # Configurações do aplicativo Expo
 └── babel.config.js                           # Configuração do Babel para transpilar o código
-
