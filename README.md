@@ -46,7 +46,28 @@ npx expo start
 ``` 
 ## Estrutura de Pastas e arquivos
 
-```plaintext
+```plaintext 
+├── components                                # Componentes reutilizáveis da aplicação
+│   ├── Button                                # Botão customizado
+│   │   ├── index.tsx                         # Componente de botão
+│   │   └── styles.ts                         # Estilos do botão
+│   ├── Input                                 # Campo de entrada de dados
+│   │   ├── index.tsx                         # Componente de input
+│   │   └── styles.ts                         # Estilos do input
+│   ├── Logo                                  # Componente de logo da aplicação
+│   │   ├── index.tsx                         # Exibição da logo
+│   │   └── styles.ts                         # Estilos da logo
+│   └── VagaCard                              # Componente de exibição de vagas
+│       ├── index.tsx                         # Card de vagas
+│       └── styles.ts                         # Estilos do card de vagas
+├── contexto                                  # Contexto global da aplicação
+│   └── UsuarioContexto.tsx                   # Contexto para gerenciamento do usuário
+├── models                                    # Modelos de dados da aplicação
+│   ├── usuario.ts                            # Modelo para o usuário
+│   └── vaga.ts                               # Modelo para vagas
+├── repositories                              # Repositórios para acesso aos dados
+│   ├── UsuarioRepository.ts                  # Repositório para manipulação de usuários
+│   └── VagaRepository.ts                     # Repositório para manipulação de vagas
 ├── screens                                   # Telas da aplicação
 │   ├── Details                               # Tela de detalhes
 │   │   ├── index.tsx                         # Exibe detalhes de usuários ou vagas
