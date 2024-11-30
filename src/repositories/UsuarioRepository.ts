@@ -5,7 +5,7 @@ import api from '../services/api';  // Importa a configuração do axios
 const userRepository = {
   findAll() {
     return api.get('/usuarios')  
-      .then(response => response.data)
+      .then(response => response.data['user'])
       .catch(error => {
         console.error('Erro ao buscar usuários', error);
         throw error;
@@ -34,7 +34,7 @@ const userRepository = {
   // Função para criar um novo usuário
   create(usuario: Usuario) {
     return api.post('/usuarios', usuario)  
-      .then(response => response.data)
+      .then(response => response.data['user'])
       .catch(error => {
         console.error('Erro ao criar usuário', error);
         throw error;
