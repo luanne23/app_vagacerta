@@ -94,3 +94,17 @@ npx expo start
 ├── App.tsx                                   # Arquivo principal que inicializa o aplicativo
 ├── app.json                                  # Configurações do aplicativo Expo
 └── babel.config.js                           # Configuração do Babel para transpilar o código
+``` 
+## Lista de tarefas
+ - [x] Conectar com a API de vagas feita com base no conteúdo que o professor Jeferson passou. Arquivos: `/services/api.tsx`,  `/repositories/UsuarioRepository.ts`, `/repositories/VagaRepository.ts` 
+ - [x] Permitir o acesso somente após realizar o login. Arquivo: `/screens/login/index.tsx`
+ - [x] Criar um contexto para o usuário autenticado. Arquivo: `/contexto/UsuarioContexto.tsx`
+ - [x] Manter localmente os dados do usuário autenticado. **É persistido o contexto do usuario**. Arquivo: `/contexto/UsuarioContexto.tsx`
+ - [x] Exibir botão de contato apenas quando a vaga estiver aberta e o botão deve redirecionar para o whatsapp;
+ Arquivo: `/screens/Detais/index.tsx`
+ - [x] Desenvolver a edição de usuário. `/screens/Profile/index.tsx`
+ - [x] Implementar função de logout `/screens/Profile/index.tsx`
+
+ 
+
+
