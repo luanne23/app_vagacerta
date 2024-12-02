@@ -28,7 +28,7 @@ const userRepository = {
     return api.post(`/usuarios/login`, {email: email, senha : senha})  
       .then(response => response.data['usuario'])
       .catch(error => {
-        console.error(`Erro de Login`, error);
+       // console.error(`Erro de Login`, error);
         return null;
       });
   },

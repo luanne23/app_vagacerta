@@ -44,6 +44,16 @@ yarn
 ```sh
 npx expo start
 ``` 
+
+# 3. Crie uma conta
+1. Clique no botão crie uma conta e criei um usuário para testes
+
+## Funcionalidades 
+- Criar Usuário 
+- Visualizar Vagas
+- Entrar em contato
+- Editar Perfil  
+
 ## Estrutura de Pastas e arquivos **src/**
 
 ```plaintext 

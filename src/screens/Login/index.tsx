@@ -1,4 +1,4 @@
-import { Image } from 'react-native';
+import { Image, Alert } from 'react-native';
 import {useContext, useState} from 'react'
 import { Wrapper,Container, Form, TextContainer, TextBlack, TextLink, TextLinkContainer } from './styles';
 import api from '../../repositories/UsuarioRepository';
@@ -16,7 +16,9 @@ export default function Login({ navigation }) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const {logar} = useContext(UsuarioContext); 
-
+    const showAlert = (mensagem) => {
+      Alert.alert("Erro", mensagem);
+    };
 
     const handleLogin = async () => {
         try {
@@ -28,11 +30,10 @@ export default function Login({ navigation }) {
             await logar(user);
             navigation.navigate('Auth', { screen: 'Home' });
           } else {
-            console.log('Login failed', 'Email or password is incorrect');
+           showAlert('Email ou senha incorretos');
           }
         } catch (error) {
-          console.error(error);
-          console.log('Login failed', 'An error occurred during login');
+          showAlert('Erro ao tentar realizar login');
         }
       };
 
@@ -46,7 +47,7 @@ export default function Login({ navigation }) {
                     <Logo />
                     <Input label='E-mail' placeholder='digite seu e-mail' value={email}
         onChangeText={setEmail}/>
-                    <Input label='Senha' placeholder='digite sua senha' value={senha}
+                    <Input label='Senha' placeholder='digite sua senha' value={senha} secureTextEntry
         onChangeText={setSenha}/>
                     <Button 
                     title="Entrar" 
